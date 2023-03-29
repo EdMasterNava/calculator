@@ -1,64 +1,119 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:root {
+  --tan: #f8f4e6;
+  --black: #2A2D37;
+  --darkBlack: #22252D;
+  --lightBlack: #5D5F63;
+  --white: white;
+  --blue: #A1E5F0;
+  --red: #E56A6A;
 }
-
-/* Remove default margin, padding, & font */
-* {
+body{
+  font-family: sans-serif;
+  font-size: 12px;
   margin: 0;
-  padding: 0;
-  font: inherit;
 }
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
+#background{
+  background: var(--tan);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
+#main-container{
+  background: var(--darkBlack);
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 300px;
 }
-
-html,
-body {
-  height: 100%;
+#display-container{
+  padding: .5rem 1rem;
 }
-
-/* Set core body defaults */
-body {
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+#button-container{
+  background: var(--black);
+  border-radius: 10px 10px 0 0;
+  padding: .5rem;
+  display: grid;
+  grid-template: 
+    "clear clear div multi"
+    "seven eight nine minus"
+    "four five six add"
+    "one two three equals"
+    "zero zero dec equals";
+  grid-gap: 5px;
 }
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+#display-container{
+  text-align: right;
 }
-
-/* Make images easier to work with */
-img,
-picture,
-svg {
-  max-width: 100%;
-  display: block;
+#display{
+  color: var(--white);
 }
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+#top-display{
+  color: var(--white);
+}
+button{
+  background: var(--darkBlack);
+  border-radius: 5px;
+  border: none;
+  color: var(--white);
+}
+button:hover{
+  background: var(--lightBlack);
+}
+#clear{
+  grid-area: clear;
+  color: var(--blue);
+}
+#divide{
+  grid-area: div;
+  color: var(--red);
+}
+#multiply{
+  grid-area: multi;
+  color: var(--red);
+}
+#seven{
+  grid-area: seven;
+}
+#eight{
+  grid-area: eight;
+}
+#nine{
+  grid-area: nine;
+}
+#subtract{
+  grid-area: minus;
+  color: var(--red);
+}
+#four{
+  grid-area: four;
+}
+#five{
+  grid-area: five;
+}
+#six{
+  grid-area: six;
+}
+#add{
+  grid-area: add;
+  color: var(--red);
+}
+#one{
+  grid-area: one;
+}
+#two{
+  grid-area: two;
+}
+#three{
+  grid-area: three;
+}
+#equals{
+  grid-area: equals;
+  color: var(--blue);
+}
+#zero{
+  grid-area: zero;
+}
+#decimal{
+  grid-area: dec;
 }
